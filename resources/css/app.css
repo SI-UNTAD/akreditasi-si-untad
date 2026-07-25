@@ -1,0 +1,38 @@
+/* 1. IMPORT DULU — wajib paling atas */
+@import "tailwindcss";
+
+/* 2. Baru @theme di bawah @import */
+@theme {
+  --color-spotify-green: #1ed760;
+  --color-spotify-black: #121212;
+  --color-spotify-surface: #181818;
+  --color-spotify-mid: #1f1f1f;
+  --color-spotify-white: #ffffff;
+  --color-spotify-silver: #b3b3b3;
+  --color-spotify-negative: #f3727f;
+  --color-spotify-warning: #ffa42b;
+  --color-spotify-blue: #539df5;
+}
+
+/* 3. Custom components */
+@layer components {
+  .spotify-card {
+    background-color: var(--color-spotify-surface);
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  .spotify-card:hover {
+    background-color: var(--color-spotify-mid);
+  }
+  .pill-button {
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    font-weight: 700;
+  }
+}
+
+@layer base {
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] > summary .expand-icon { transform: rotate(180deg); }
+}
