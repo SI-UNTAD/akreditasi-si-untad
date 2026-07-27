@@ -20,14 +20,13 @@ class Document extends Model
         'evaluasi'     => 'Evaluasi',
         'pengendalian' => 'Pengendalian',
         'peningkatan'  => 'Peningkatan',
-        'summary'      => 'Summary',
     ];
 
     protected $fillable = [
         'criteria_id', 'ppepp_category', 'document_number', 'title',
         'description', 'document_type', 'year',
         'google_drive_file_id', 'google_drive_mime_type', 'file_size_bytes',
-        'sort_order', 'is_published', 'is_restricted', 'uploaded_by',
+        'sort_order', 'is_published', 'is_restricted', 
     ];
 
     protected $casts = [

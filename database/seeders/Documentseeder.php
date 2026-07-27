@@ -39,6 +39,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SK',
                         'year' => 2019,
                         'file_id' => '11TADhHQzrRFiO2K9BfBV7oZOMf_Q5gD7?hl=ID',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => '012/UN28/KL/2023',
@@ -46,6 +47,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SK',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'DOK-VMTS-001/2023',
@@ -53,6 +55,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Dokumen',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pelaksanaan' => [
@@ -62,6 +65,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SOP',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'LAP-SOS-001/2023',
@@ -69,6 +73,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'evaluasi' => [
@@ -78,6 +83,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Instrumen',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'LAP-EVAL-VMTS/2023',
@@ -85,6 +91,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pengendalian' => [
@@ -94,6 +101,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'RTL',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'peningkatan' => [
@@ -103,6 +111,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Renstra',
                         'year' => 2020,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
             ],
@@ -118,6 +127,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SK',
                         'year' => 2022,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'SK-KPS-001/2023',
@@ -125,6 +135,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SK',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pelaksanaan' => [
@@ -134,6 +145,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SOP',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'MOU-001/2023',
@@ -141,6 +153,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'MoU',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'MOU-002/2023',
@@ -148,6 +161,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'MoU',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'evaluasi' => [
@@ -157,6 +171,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pengendalian' => [
@@ -166,6 +181,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan AMI',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'peningkatan' => [
@@ -175,6 +191,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'RTL',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
             ],
@@ -190,6 +207,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SK',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'PEDOMAN-MHS-001/2022',
@@ -197,6 +215,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Pedoman',
                         'year' => 2022,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pelaksanaan' => [
@@ -206,6 +225,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'DATA-MHS-001/2023',
@@ -213,6 +233,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Data',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'evaluasi' => [
@@ -222,6 +243,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pengendalian' => [
@@ -231,6 +253,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SOP',
                         'year' => 2022,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'peningkatan' => [
@@ -240,6 +263,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Program Kerja',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
             ],
@@ -255,6 +279,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SK',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'RENSTRA-SDM-001/2021',
@@ -262,6 +287,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Renstra',
                         'year' => 2021,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pelaksanaan' => [
@@ -271,6 +297,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Data',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'LAP-PELATIHAN-001/2023',
@@ -278,6 +305,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'evaluasi' => [
@@ -287,6 +315,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pengendalian' => [
@@ -296,6 +325,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'RTL',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'peningkatan' => [
@@ -305,6 +335,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Program',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
             ],
@@ -320,6 +351,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'RKAT',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'SK-SARPRAS-001/2022',
@@ -327,6 +359,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SK',
                         'year' => 2022,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pelaksanaan' => [
@@ -336,6 +369,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan Keuangan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'DATA-ASET-001/2023',
@@ -343,6 +377,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Data Aset',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'evaluasi' => [
@@ -352,6 +387,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pengendalian' => [
@@ -361,6 +397,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SOP',
                         'year' => 2022,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'peningkatan' => [
@@ -370,6 +407,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Program',
                         'year' => 2024,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
             ],
@@ -385,6 +423,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'SK',
                         'year' => 2022,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'DOK-KUR-001/2022',
@@ -392,6 +431,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Dokumen Kurikulum',
                         'year' => 2022,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pelaksanaan' => [
@@ -401,6 +441,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Jadwal',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'RPS-SI-001/2023',
@@ -408,6 +449,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'RPS',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'LAP-MONEV-PBM/2023',
@@ -415,6 +457,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'evaluasi' => [
@@ -424,6 +467,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                     [
                         'number' => 'HASIL-SURVEY-MHS/2023',
@@ -431,6 +475,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Laporan Survey',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'pengendalian' => [
@@ -440,6 +485,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'RTL',
                         'year' => 2023,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
                 'peningkatan' => [
@@ -449,6 +495,7 @@ class DocumentSeeder extends Seeder
                         'type' => 'Program Kerja',
                         'year' => 2024,
                         'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'description' => $doc['description'] ?? null,
                     ],
                 ],
             ],

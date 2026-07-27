@@ -1,33 +1,30 @@
-{{-- resources/views/livewire/ppepp-panel.blade.php --}}
+<div>
+    {{-- PPEPP Tabs --}}
+    <div class="flex flex-wrap gap-2 mb-4" role="tablist">
+        @foreach ($categories as $key => $label)
+            <button
+                wire:click="switchTab('{{ $key }}')"
+                role="tab"
+                @class([
+                    'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
+                    'bg-primary text-on-primary' => $activeTab === $key,
+                    'bg-surface-container text-on-surface-variant hover:bg-surface-container-high' => $activeTab !== $key,
+                ])
+            >
+                {{ $label }}
+            </button>
+        @endforeach
+    </div>
 
-<div
-    x-data="{ expanded: false }"
-    x-init="
-        $el.closest('details')?.addEventListener('toggle', (e) => {
-            if (e.target.open && !expanded) {
-                expanded = true;
-                $wire.loadDocuments();
-            }
-        })
-    ">
-
-    {{-- Loading skeleton --}}
-    @if (!$loaded)
-        <div class="flex flex-col gap-3 animate-pulse">
-            @foreach (range(1, 5) as $_)
-                <div class="h-14 bg-surface-container rounded-xl"></div>
-            @endforeach
-        </div>
+    {{-- Document Table --}}
+    @if ($documents->isEmpty())
+        <x-empty-state message="Belum ada dokumen di kategori ini." />
     @else
-        <div class="flex flex-col gap-3">
-            @foreach ($documentsByCategory as $key => $data)
-                <x-ppepp-accordion
-                    :criteria="$criteria"
-                    :category="$key"
-                    :label="$data['label']"
-                    :documents="$data['documents']"
-                />
-            @endforeach
-        </div>
+        <x-document-table :documents="$documents" />
     @endif
+
+    {{-- Pagination --}}
+    <div class="mt-4">
+        {{ $documents->links() }}
+    </div>
 </div>

@@ -6,40 +6,53 @@ namespace App\Livewire;
 use App\Models\Criteria;
 use App\Models\Document;
 use Livewire\Component;
+use Livewire\WithPagination;
+use Livewire\Attributes\On;
+
 
 class PpeppPanel extends Component
 {
+    use WithPagination;
     public Criteria $criteria;
-    public bool $loaded = false;
+    public string $activeTab = 'penetapan';
+    public string $search = '';
+    public int $perPage = 12;
 
-    // Dipanggil saat accordion di-expand (via Alpine.js event)
-    public function loadDocuments(): void
+    protected $queryString = [];
+
+    #[On('search-updated')]
+    public function updateSearch($search)
     {
-        $this->loaded = true;
+        $this->search = $search;
+        $this->resetPage();
+    }
+
+    public function switchTab($tab)
+    {
+        $this->activeTab = $tab;
+        $this->resetPage();
     }
 
     public function render()
     {
-        $documentsByCategory = [];
+        $query = $this->criteria->documents()
+            ->published()
+            ->where('ppepp_category', $this->activeTab);
 
-        if ($this->loaded) {
-            // Query efisien: satu query untuk semua kategori PPEPP
-            $documents = $this->criteria
-                ->documents()
-                ->published()
-                ->get()
-                ->groupBy('ppepp_category');
-
-            foreach (Document::PPEPP_CATEGORIES as $key => $label) {
-                $documentsByCategory[$key] = [
-                    'label' => $label,
-                    'documents' => $documents->get($key, collect()),
-                ];
-            }
+        if (strlen($this->search) > 0) {
+            $query->where(function ($q) {
+                $q->where('title', 'like', "%{$this->search}%")
+                    ->orWhere('document_number', 'like', "%{$this->search}%");
+            });
         }
 
         return view('livewire.ppepp-panel', [
-            'documentsByCategory' => $documentsByCategory,
+            'documents' => $query->orderBy('sort_order')->paginate($this->perPage),
+            'categories' => Document::PPEPP_CATEGORIES,
         ]);
+    }
+    public function placeholder()
+    {
+        return view('livewire.ppepp-panel-placeholder');
     }
 }
