@@ -38,7 +38,7 @@ class DocumentsTable
                         'peningkatan' => 'info',
                         default => 'gray',
                     }),
-                TextColumn::make('criteria.full_label')
+                TextColumn::make('criteria.name')
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('year')
