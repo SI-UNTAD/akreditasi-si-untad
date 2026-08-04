@@ -13,13 +13,18 @@ class DocumentPreviewController extends Controller
      * Redirect ke Google Drive preview.
      * Route: GET /documents/{document}/preview
      */
+
     public function preview(Document $document): RedirectResponse
     {
         // Cek akses untuk dokumen terbatas
+        if (!$document->hasDriveFile()) {
+            abort(404);
+        }
         if ($document->is_restricted && !Auth::check()) {
             return redirect()->route('login')
                 ->with('intended_document', $document->id);
         }
+
 
         // Logging views (opsional)
         // DocumentView::create(['document_id' => $document->id, 'ip' => request()->ip()]);
@@ -33,9 +38,13 @@ class DocumentPreviewController extends Controller
      */
     public function download(Document $document): RedirectResponse
     {
+        if (!$document->hasDriveFile()) {
+            abort(404);
+        }
         if ($document->is_restricted && !Auth::check()) {
             return redirect()->route('login');
         }
+
 
         return redirect($document->download_url);
     }

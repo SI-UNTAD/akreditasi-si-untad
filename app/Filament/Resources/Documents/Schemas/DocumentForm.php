@@ -37,7 +37,8 @@ class DocumentForm
                     ->searchable(),
                 TextInput::make('google_drive_file_id')
                     ->maxLength(255)
-                    ->label('Google Drive File ID'),
+                    ->label('Google Drive File ID')
+                    ->helperText('Salin hanya ID dari URL Drive, misalnya "1AbC...Xyz". Contoh URL: https://drive.google.com/file/d/1AbC...Xyz/view'),
                 TextInput::make('sort_order')
                     ->numeric()
                     ->default(0),

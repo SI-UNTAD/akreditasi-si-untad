@@ -22,6 +22,14 @@ class Document extends Model
         'peningkatan'  => 'Peningkatan',
     ];
 
+    const PLACEHOLDER_FILE_ID = 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE';
+
+    public function hasDriveFile(): bool
+    {
+        return filled($this->google_drive_file_id)
+            && $this->google_drive_file_id !== self::PLACEHOLDER_FILE_ID;
+    }
+
     protected $fillable = [
         'criteria_id', 'ppepp_category', 'document_number', 'title',
         'description', 'document_type', 'year',
@@ -56,7 +64,7 @@ class Document extends Model
      */
     public function getPreviewUrlAttribute(): ?string
     {
-        if (!$this->google_drive_file_id) return null;
+        if (!$this->hasDriveFile()) return null;
         return "https://drive.google.com/file/d/{$this->google_drive_file_id}/preview";
     }
 

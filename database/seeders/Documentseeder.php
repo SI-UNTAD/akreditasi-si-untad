@@ -37,7 +37,7 @@ class DocumentSeeder extends Seeder
                         'document_number' => '...',
                         'type' => '...',
                         'year' => 2024,
-                        'file_id' => 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE',
+                        'file_id' => \App\Models\Document::PLACEHOLDER_FILE_ID,
                         'google_drive_mime_type' => 'application/pdf',
                         'file_size_bytes' => 1024,
                         'sort_order' => 1,
@@ -75,7 +75,7 @@ class DocumentSeeder extends Seeder
             foreach ($categories as $category => $docs) {
                 foreach ($docs as $order => $doc) {
                     // Skip dokumen dengan file_id placeholder
-                    if ($doc['file_id'] === 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE') {
+                    if ($doc['file_id'] === \App\Models\Document::PLACEHOLDER_FILE_ID) {
                         Document::updateOrCreate(
                             [
                                 'criteria_id' => $criteria->id,
