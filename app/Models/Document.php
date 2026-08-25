@@ -74,7 +74,7 @@ class Document extends Model
      */
     public function getDownloadUrlAttribute(): ?string
     {
-        if (!$this->google_drive_file_id) return null;
+        if (!$this->hasDriveFile()) return null;
         return "https://drive.google.com/uc?export=download&id={$this->google_drive_file_id}";
     }
 
@@ -83,7 +83,7 @@ class Document extends Model
      */
     public function getViewUrlAttribute(): ?string
     {
-        if (!$this->google_drive_file_id) return null;
+        if (!$this->hasDriveFile()) return null;
         return "https://drive.google.com/file/d/{$this->google_drive_file_id}/view";
     }
 

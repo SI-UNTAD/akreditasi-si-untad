@@ -30,7 +30,7 @@ class GoogleDriveService
      */
     public function embedUrl(Document $document): ?string
     {
-        if (!$document->google_drive_file_id) return null;
+        if (!$document->hasDriveFile()) return null;
         $rawUrl = "https://drive.google.com/file/d/{$document->google_drive_file_id}/view";
         return "https://docs.google.com/viewer?url=" . urlencode($rawUrl) . "&embedded=true";
     }
@@ -40,7 +40,7 @@ class GoogleDriveService
      */
     public function thumbnailUrl(Document $document, int $size = 200): ?string
     {
-        if (!$document->google_drive_file_id) return null;
+        if (!$document->hasDriveFile()) return null;
         return "https://drive.google.com/thumbnail?id={$document->google_drive_file_id}&sz=s{$size}";
     }
 }
