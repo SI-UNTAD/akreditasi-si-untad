@@ -14,5 +14,3 @@ class CreateCriteria extends CreateRecord
         return $this->getResource()::getUrl('index');
     }
 }
-
-

@@ -1,4 +1,5 @@
 <?php
+
 // app/Models/Document.php
 
 namespace App\Models;
@@ -6,8 +7,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Criteria;
-
 
 class Document extends Model
 {
@@ -15,11 +14,11 @@ class Document extends Model
 
     // Konstanta PPEPP — gunakan ini di seluruh codebase, bukan magic string
     const PPEPP_CATEGORIES = [
-        'penetapan'    => 'Penetapan',
-        'pelaksanaan'  => 'Pelaksanaan',
-        'evaluasi'     => 'Evaluasi',
+        'penetapan' => 'Penetapan',
+        'pelaksanaan' => 'Pelaksanaan',
+        'evaluasi' => 'Evaluasi',
         'pengendalian' => 'Pengendalian',
-        'peningkatan'  => 'Peningkatan',
+        'peningkatan' => 'Peningkatan',
     ];
 
     const PLACEHOLDER_FILE_ID = 'GANTI_DENGAN_FILE_ID_GOOGLE_DRIVE';
@@ -34,14 +33,14 @@ class Document extends Model
         'criteria_id', 'ppepp_category', 'document_number', 'title',
         'description', 'document_type', 'year',
         'google_drive_file_id', 'google_drive_mime_type', 'file_size_bytes',
-        'sort_order', 'is_published', 'is_restricted', 
+        'sort_order', 'is_published', 'is_restricted',
     ];
 
     protected $casts = [
-        'is_published'   => 'boolean',
-        'is_restricted'  => 'boolean',
-        'file_size_bytes'=> 'integer',
-        'year'           => 'integer',
+        'is_published' => 'boolean',
+        'is_restricted' => 'boolean',
+        'file_size_bytes' => 'integer',
+        'year' => 'integer',
     ];
 
     // === RELASI ===
@@ -64,7 +63,10 @@ class Document extends Model
      */
     public function getPreviewUrlAttribute(): ?string
     {
-        if (!$this->hasDriveFile()) return null;
+        if (! $this->hasDriveFile()) {
+            return null;
+        }
+
         return "https://drive.google.com/file/d/{$this->google_drive_file_id}/preview";
     }
 
@@ -74,7 +76,10 @@ class Document extends Model
      */
     public function getDownloadUrlAttribute(): ?string
     {
-        if (!$this->hasDriveFile()) return null;
+        if (! $this->hasDriveFile()) {
+            return null;
+        }
+
         return "https://drive.google.com/uc?export=download&id={$this->google_drive_file_id}";
     }
 
@@ -83,7 +88,10 @@ class Document extends Model
      */
     public function getViewUrlAttribute(): ?string
     {
-        if (!$this->hasDriveFile()) return null;
+        if (! $this->hasDriveFile()) {
+            return null;
+        }
+
         return "https://drive.google.com/file/d/{$this->google_drive_file_id}/view";
     }
 
@@ -92,15 +100,18 @@ class Document extends Model
      */
     public function getFileSizeHumanAttribute(): string
     {
-        if (!$this->file_size_bytes) return 'N/A';
+        if (! $this->file_size_bytes) {
+            return 'N/A';
+        }
         $units = ['B', 'KB', 'MB', 'GB'];
-        $size  = $this->file_size_bytes;
-        $i     = 0;
+        $size = $this->file_size_bytes;
+        $i = 0;
         while ($size >= 1024 && $i < count($units) - 1) {
             $size /= 1024;
             $i++;
         }
-        return round($size, 1) . ' ' . $units[$i];
+
+        return round($size, 1).' '.$units[$i];
     }
 
     // === SCOPES ===

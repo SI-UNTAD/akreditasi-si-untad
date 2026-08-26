@@ -1,10 +1,10 @@
 <?php
+
 // app/Http/Controllers/DocumentController.php
 
 namespace App\Http\Controllers;
 
 use App\Models\Criteria;
-use Illuminate\Http\JsonResponse;
 use Illuminate\View\View;
 
 class DocumentController extends Controller

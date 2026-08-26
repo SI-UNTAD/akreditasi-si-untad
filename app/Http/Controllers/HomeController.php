@@ -1,4 +1,5 @@
 <?php
+
 // app/Http/Controllers/HomeController.php
 
 namespace App\Http\Controllers;
@@ -13,32 +14,32 @@ class HomeController extends Controller
         $achievements = [
             [
                 'category' => 'International Competition',
-                'title'    => 'Gold Medal I-Jamcsiix 2025',
-                'desc'     => 'Integrating SMART and GIS for Road Repair Prioritization',
-                'img'      => asset('images/🏆 [SELAMAT & SUKSES!] 🏆Keluarga besar Himpunan Mahasiswa Teknik Informatika (HMTI) Universita.webp'),
-                'alt'      => 'Gold Medal I-Jamcsiix',
+                'title' => 'Gold Medal I-Jamcsiix 2025',
+                'desc' => 'Integrating SMART and GIS for Road Repair Prioritization',
+                'img' => asset('images/🏆 [SELAMAT & SUKSES!] 🏆Keluarga besar Himpunan Mahasiswa Teknik Informatika (HMTI) Universita.webp'),
+                'alt' => 'Gold Medal I-Jamcsiix',
             ],
             [
                 'category' => 'Nasional Competition',
-                'title'    => 'Pendanaan PKM GFT 2025',
-                'desc'     => 'Museum Digital Twin: Pelestarian Budaya Indonesia Berbasis Metaverse.',
-                'img'      => asset('images/🚀 PRESTASI GEMILANG! 🚀Selamat dan sukses kami ucapkan kepada Tim HMTI UNTAD dan perwakilan an.webp'),
-                'alt'      => 'Museum Digital Twin: Pelestarian Budaya Indonesia Berbasis Metaverse',
+                'title' => 'Pendanaan PKM GFT 2025',
+                'desc' => 'Museum Digital Twin: Pelestarian Budaya Indonesia Berbasis Metaverse.',
+                'img' => asset('images/🚀 PRESTASI GEMILANG! 🚀Selamat dan sukses kami ucapkan kepada Tim HMTI UNTAD dan perwakilan an.webp'),
+                'alt' => 'Museum Digital Twin: Pelestarian Budaya Indonesia Berbasis Metaverse',
             ],
             [
                 'category' => 'Regional Achievement',
-                'title'    => 'East Indonesia Robot Contest 2025',
-                'desc'     => 'Juara 1 Kategori Lomba - Robot Sumo.',
-                'img'      => asset('images/🎉 CONGRATULATION! 🎉Dengan bangga kami mengucapkan selamat kepada Anggota HMTI UNTAD atas prest.jpg'),
-                'alt'      => 'East Indonesia Robot Contest 2025',
+                'title' => 'East Indonesia Robot Contest 2025',
+                'desc' => 'Juara 1 Kategori Lomba - Robot Sumo.',
+                'img' => asset('images/🎉 CONGRATULATION! 🎉Dengan bangga kami mengucapkan selamat kepada Anggota HMTI UNTAD atas prest.jpg'),
+                'alt' => 'East Indonesia Robot Contest 2025',
             ],
         ];
 
         $orgStructure = [
             'head' => [
-                'name'  => 'Yusuf Anshori, S.T., M.T.',
+                'name' => 'Yusuf Anshori, S.T., M.T.',
                 'title' => 'Kepala Program Studi',
-                'icon'  => 'person',
+                'icon' => 'person',
             ],
             'units' => [
                 ['name' => 'Sekretaris Prodi',       'desc' => 'Adm & Keuangan'],

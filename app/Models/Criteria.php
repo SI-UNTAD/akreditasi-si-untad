@@ -1,4 +1,5 @@
 <?php
+
 // app/Models/Criteria.php
 
 namespace App\Models;
@@ -16,7 +17,7 @@ class Criteria extends Model
 
     protected $casts = [
         'is_active' => 'boolean',
-        'number'    => 'integer',
+        'number' => 'integer',
     ];
 
     // Relasi ke semua dokumen
@@ -29,9 +30,9 @@ class Criteria extends Model
     public function documentsByCategory(string $category): HasMany
     {
         return $this->hasMany(Document::class)
-                    ->where('ppepp_category', $category)
-                    ->where('is_published', true)
-                    ->orderBy('sort_order');
+            ->where('ppepp_category', $category)
+            ->where('is_published', true)
+            ->orderBy('sort_order');
     }
 
     // Accessor: URL-friendly label untuk heading

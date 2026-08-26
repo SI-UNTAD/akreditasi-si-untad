@@ -1,4 +1,5 @@
 <?php
+
 // app/Livewire/PpeppPanel.php
 
 namespace App\Livewire;
@@ -8,16 +9,17 @@ use App\Models\Document;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-
 class PpeppPanel extends Component
 {
     use WithPagination;
+
     public Criteria $criteria;
+
     public string $activeTab = 'penetapan';
+
     public int $perPage = 12;
 
     protected $queryString = [];
-
 
     // public function updateSearch($search)
     // {
@@ -60,6 +62,7 @@ class PpeppPanel extends Component
             'categories' => Document::PPEPP_CATEGORIES,
         ]);
     }
+
     public function placeholder()
     {
         return view('livewire.ppepp-panel-placeholder');

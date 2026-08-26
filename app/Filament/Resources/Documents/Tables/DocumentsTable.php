@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Documents\Tables;
 
+use App\Models\Document;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -13,7 +14,6 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
-use App\Models\Document;
 use Illuminate\Support\Arr;
 
 class DocumentsTable
@@ -47,6 +47,12 @@ class DocumentsTable
                     ->label('Ukuran'),
                 IconColumn::make('is_published')
                     ->boolean(),
+                IconColumn::make('file_status')
+                    ->label('File')
+                    ->state(fn(Document $record): bool => $record->hasDriveFile())
+                    ->boolean()
+                    ->trueColor('success')
+                    ->falseColor('danger'),
             ])
             ->filters([
                 SelectFilter::make('ppepp_category')
