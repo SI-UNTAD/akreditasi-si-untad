@@ -6,12 +6,8 @@
 
 @section('head')
 <style>
-    .circuit-bg {
-        background-image: radial-gradient(circle at 2px 2px, rgba(0,61,155,0.05) 1px, transparent 0);
-        background-size: 40px 40px;
-    }
     .elegant-line {
-        background: linear-gradient(90deg, transparent, #003d9b, transparent);
+        background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
         height: 1px;
         width: 100%;
     }
