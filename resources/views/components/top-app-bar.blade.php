@@ -12,29 +12,30 @@
     ];
 @endphp
 
-<nav class="sticky top-0 w-full z-50 bg-[#121212] border-b border-[#252525]">
-    <div class="flex items-center justify-between px-16 py-4 max-w-[1280px] mx-auto">
-        <a href="{{ route('home') }}" class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[#1ed760] text-3xl">play_circle</span>
-            <span class="text-[24px] font-bold text-white">SI TADULAKO</span>
+<nav class="sticky top-0 w-full z-50 bg-canvas border-b border-hairline">
+    <div class="flex items-center justify-between px-margin-page max-w-container-max mx-auto py-4">
+        <a href="{{ route('home') }}" class="flex items-center gap-3" aria-label="IS TADULAKO Home">
+            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+            <span class="text-h3 font-bold text-ink">IS TADULAKO</span>
         </a>
 
         <div class="hidden md:flex items-center gap-8">
             @foreach ($navLinks as $link)
                 <a href="{{ $link['href'] }}"
-                    class="{{ $link['active'] ? 'text-white font-bold' : 'text-[#b3b3b3] hover:text-white' }} text-[14px] font-bold transition-colors">
+                    class="{{ $link['active'] ? 'text-primary font-bold' : 'text-body-sm text-ink-secondary hover:text-ink' }} font-medium transition-colors">
                     {{ $link['label'] }}
                 </a>
             @endforeach
         </div>
-        <div class="flex gap-4">
+
+        <div class="flex items-center gap-3">
             <a href="{{ route('documents.index') }}"
-                class="bg-white text-[#121212] px-8 py-3 rounded-full text-[14px] font-bold uppercase tracking-[1.4px] hover:scale-105 transition-transform">
-                DOKUMEN
+                class="pill-button bg-primary text-on-primary px-6 py-2 text-body-sm hover:bg-primary-active transition-all duration-150 hover:scale-[0.98]">
+                Dokumen
             </a>
             <a href="/admin"
-                class="bg-white text-[#121212] px-8 py-3 rounded-full text-[14px] font-bold uppercase tracking-[1.4px] hover:scale-105 transition-transform">
-                ADMIN
+                class="pill-button bg-canvas text-ink border border-hairline px-6 py-2 text-body-sm hover:bg-canvas-soft transition-colors">
+                Admin
             </a>
         </div>
     </div>
