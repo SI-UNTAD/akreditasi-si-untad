@@ -1,5 +1,4 @@
 <?php
-
 // app/Http/Controllers/HomeController.php
 
 namespace App\Http\Controllers;
@@ -10,7 +9,6 @@ class HomeController extends Controller
 {
     public function index(): View
     {
-        // Data statis untuk saat ini — bisa dipindah ke DB nanti
         $achievements = [
             [
                 'category' => 'International Competition',
@@ -18,6 +16,7 @@ class HomeController extends Controller
                 'desc' => 'Integrating SMART and GIS for Road Repair Prioritization',
                 'img' => asset('images/🏆 [SELAMAT & SUKSES!] 🏆Keluarga besar Himpunan Mahasiswa Teknik Informatika (HMTI) Universita.webp'),
                 'alt' => 'Gold Medal I-Jamcsiix',
+                'color' => 'accent-purple',
             ],
             [
                 'category' => 'Nasional Competition',
@@ -25,6 +24,7 @@ class HomeController extends Controller
                 'desc' => 'Museum Digital Twin: Pelestarian Budaya Indonesia Berbasis Metaverse.',
                 'img' => asset('images/🚀 PRESTASI GEMILANG! 🚀Selamat dan sukses kami ucapkan kepada Tim HMTI UNTAD dan perwakilan an.webp'),
                 'alt' => 'Museum Digital Twin: Pelestarian Budaya Indonesia Berbasis Metaverse',
+                'color' => 'accent-orange',
             ],
             [
                 'category' => 'Regional Achievement',
@@ -32,6 +32,7 @@ class HomeController extends Controller
                 'desc' => 'Juara 1 Kategori Lomba - Robot Sumo.',
                 'img' => asset('images/🎉 CONGRATULATION! 🎉Dengan bangga kami mengucapkan selamat kepada Anggota HMTI UNTAD atas prest.jpg'),
                 'alt' => 'East Indonesia Robot Contest 2025',
+                'color' => 'accent-teal',
             ],
         ];
 
@@ -41,10 +42,16 @@ class HomeController extends Controller
                 'title' => 'Kepala Program Studi',
                 'icon' => 'person',
             ],
-            'units' => [
-                ['name' => 'Sekretaris Prodi',       'desc' => 'Adm & Keuangan'],
-                ['name' => 'Koordinator Lab',         'desc' => 'Fasilitas Riset'],
-                ['name' => 'Unit Penjaminan Mutu',    'desc' => 'Akreditasi & Standar'],
+            'lecturers' => [
+                ['name' => 'Wirdayanti', 'title' => 'S.T., M.Eng.'],
+                ['name' => 'Rizka Ardiansyah', 'title' => 'S.Kom., M.Kom.'],
+                ['name' => 'Ir. Hajra Rasmita Ngemba', 'title' => 'S.Kom., M.M., M.Kom'],
+                ['name' => 'Dwi Shinta Angreni', 'title' => 'S.Si., M.Kom.'],
+                ['name' => 'Ir. Syahrullah', 'title' => 'M.Kom.'],
+                ['name' => 'Anisa Yulandari', 'title' => 'M.Kom.'],
+                ['name' => 'Ayu Hernita', 'title' => 'M.Kom.'],
+                ['name' => 'Fizar Syafa\'at', 'title' => 'S.Kom., M.Kom.'],
+                ['name' => 'Rinianty', 'title' => 'S.Kom., M.TI.'],
             ],
         ];
 

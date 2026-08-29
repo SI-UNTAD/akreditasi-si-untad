@@ -2,14 +2,13 @@
 
 @props(['structure' => [], 'id' => 'struktur'])
 
-<section id="{{ $id }}"
-         class="py-[120px] max-w-[1280px] mx-auto px-16">
+<section id="{{ $id }}" class="py-section-gap max-w-container-max mx-auto px-margin-page">
 
     <div class="text-center mb-20">
-        <h2 class="text-[32px] font-semibold text-[#003d9b] mb-4">
+        <h2 class="text-heading-1 font-bold text-ink mb-4 tracking-tight-heading-1">
             Struktur Organisasi
         </h2>
-        <p class="text-[#434654]">
+        <p class="text-body-lg text-ink-muted">
             Kepemimpinan yang berfokus pada kolaborasi dan transparansi.
         </p>
     </div>
@@ -17,45 +16,45 @@
     <div class="relative flex flex-col items-center">
 
         {{-- Kepala Prodi --}}
-        <div class="glass-card p-6 rounded-2xl border-2 border-[#003d9b]
-                    w-64 text-center z-10 relative">
-            <div class="w-16 h-16 rounded-full bg-[#0052cc] mx-auto mb-4
-                        flex items-center justify-center">
-                <span class="material-symbols-outlined text-[#c4d2ff] text-3xl">
+        <div class="feature-card border-2 border-primary p-8 rounded-2xl w-80 text-center z-10 relative">
+            <div class="w-16 h-16 rounded-full bg-primary/10 mx-auto mb-4 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-3xl">
                     {{ $structure['head']['icon'] }}
                 </span>
             </div>
-            <h4 class="font-bold text-[#003d9b]">
+            <h4 class="text-heading-2 font-bold text-ink">
                 {{ $structure['head']['name'] }}
             </h4>
-            <p class="text-[12px] text-[#434654]">
+            <p class="text-body-sm text-ink-muted">
                 {{ $structure['head']['title'] }}
             </p>
         </div>
 
-        {{-- Vertical line --}}
-        <div class="h-16 w-[1px] bg-[#003d9b]/30"></div>
+        {{-- Vertical connector --}}
+        <div class="h-16 w-[1px] bg-hairline"></div>
 
         {{-- Horizontal connector --}}
-        <div class="relative w-full max-w-4xl h-[1px] bg-[#003d9b]/30">
-            <div class="absolute top-0 left-0 h-8 w-[1px] bg-[#003d9b]/30"></div>
-            <div class="absolute top-0 right-0 h-8 w-[1px] bg-[#003d9b]/30"></div>
-            <div class="absolute top-0 left-1/2 h-8 w-[1px] bg-[#003d9b]/30"></div>
+        <div class="relative w-full max-w-5xl h-[1px] bg-hairline">
+            @for ($i = 0; $i < 9; $i++)
+                <div class="absolute top-0 left-[calc(100%/9*{{$i}} + 50%)] h-8 w-[1px] bg-hairline -translate-x-1/2"></div>
+            @endfor
         </div>
 
-        {{-- Unit-unit --}}
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 w-full">
-            @foreach ($structure['units'] as $unit)
-                <div class="flex flex-col items-center">
-                    <div class="glass-card p-4 rounded-xl
-                                border border-[#c3c6d6]/30 w-56 text-center">
-                        <h5 class="font-bold text-[#003d9b] text-[16px]">
-                            {{ $unit['name'] }}
-                        </h5>
-                        <p class="text-[11px] text-[#434654]">
-                            {{ $unit['desc'] }}
-                        </p>
+        {{-- 9 Dosen Grid --}}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 w-full max-w-5xl">
+            @foreach ($structure['lecturers'] as $lecturer)
+                <div class="feature-card flex flex-col items-center text-center">
+                    <div class="w-8 h-8 rounded-full bg-accent-sky/10 flex items-center justify-center mb-4 mx-auto">
+                        <span class="material-symbols-outlined text-[24px] text-accent-sky">
+                            school
+                        </span>
                     </div>
+                    <h5 class="text-heading-3 font-bold text-ink">
+                        {{ $lecturer['name'] }}
+                    </h5>
+                    <p class="text-body-sm text-ink-muted">
+                        {{ $lecturer['title'] }}
+                    </p>
                 </div>
             @endforeach
         </div>
