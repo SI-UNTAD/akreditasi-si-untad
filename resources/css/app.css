@@ -1,38 +1,56 @@
 /* 1. IMPORT DULU — wajib paling atas */
 @import "tailwindcss";
 
-/* 2. Baru @theme di bawah @import */
+/* 2. Notion Design Tokens via @theme */
 @theme {
-  --color-spotify-green: #1ed760;
-  --color-spotify-black: #121212;
-  --color-spotify-surface: #181818;
-  --color-spotify-mid: #1f1f1f;
-  --color-spotify-white: #ffffff;
-  --color-spotify-silver: #b3b3b3;
-  --color-spotify-negative: #f3727f;
-  --color-spotify-warning: #ffa42b;
-  --color-spotify-blue: #539df5;
+  --color-canvas-soft: #f6f5f4;
+  --color-canvas: #ffffff;
+  --color-ink: #000000;
+  --color-ink-secondary: #31302e;
+  --color-ink-muted: #615d59;
+  --color-ink-faint: #a39e98;
+  --color-primary: #0075de;
+  --color-primary-active: #005bab;
+  --color-secondary: #213183;
+  --color-hairline: #e6e6e6;
+  --color-accent-sky: #62aef0;
+  --color-accent-purple: #d6b6f6;
+  --color-accent-pink: #ff64c8;
+  --color-accent-orange: #dd5b00;
+  --color-accent-teal: #2a9d99;
+  --color-accent-green: #1aae39;
 }
 
 /* 3. Custom components */
 @layer components {
-  .spotify-card {
-    background-color: var(--color-spotify-surface);
-    border-radius: 8px;
-    transition: background-color 0.2s;
-  }
-  .spotify-card:hover {
-    background-color: var(--color-spotify-mid);
-  }
   .pill-button {
     border-radius: 9999px;
     text-transform: uppercase;
     letter-spacing: 1.4px;
     font-weight: 700;
   }
+  .feature-card {
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--rounded-lg);
+    padding: var(--spacing-lg);
+  }
+  .feature-card-elevated {
+    @extend .feature-card;
+    box-shadow: rgba(0,0,0,0.01) 0 0.175px 1.041px,
+                rgba(0,0,0,0.02) 0 0.8px 2.925px,
+                rgba(0,0,0,0.027) 0 2.025px 7.847px,
+                rgba(0,0,0,0.04) 0 4px 18px;
+  }
 }
 
 @layer base {
   details > summary::-webkit-details-marker { display: none; }
   details[open] > summary .expand-icon { transform: rotate(180deg); }
+  html {
+    @apply bg-canvas-soft text-ink;
+  }
+  body {
+    @apply bg-canvas-soft text-ink antialiased;
+  }
 }
