@@ -17,7 +17,7 @@
     @livewireStyles
     @yield('head')
 </head>
-<body class="bg-canvas-soft text-ink overflow-x-hidden font-sans antialiased">
+<body class="bg-canvas text-ink overflow-x-hidden font-sans antialiased">
 
     @yield('content')
 

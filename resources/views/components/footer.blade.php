@@ -1,20 +1,13 @@
 {{-- resources/views/components/footer.blade.php --}}
 
-<footer class="bg-canvas-soft pt-16 pb-10 border-t border-hairline">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-margin-page max-w-container-max mx-auto">
-        <div>
-            <h3 class="text-heading-2 font-bold text-ink mb-6">IS TADULAKO</h3>
-            <p class="text-caption text-ink-muted mb-8">
-                Universitas Tadulako, Palu, Indonesia.
-            </p>
-        </div>
-        <div class="grid grid-cols-2 gap-8">
-            <div class="flex flex-col gap-4">
-                <h5 class="text-eyebrow font-bold uppercase text-ink-muted tracking-widest">Links</h5>
-                <a href="#" class="text-body-sm text-ink-secondary hover:text-primary transition-colors">
-                    Academic Portal
-                </a>
-            </div>
+<footer class="mt-10 mb-5 border-t border-hairline">
+    <div class="grid grid-cols-1 items-center gap-2 w-screen place-items-center">
+        <a href="{{ route('home') }}" class="flex items-center gap-3" aria-label="IS TADULAKO Home">
+            <img src="{{ asset('images/logo.webp') }}" alt="Sistem Informasi" class="w-16  h-16 object-cover">
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+            <h2 class="text-body-sm text-ink-muted">© 2026 SI TADULAKO, Inc. All rights reserved.</h2>
         </div>
     </div>
 </footer>

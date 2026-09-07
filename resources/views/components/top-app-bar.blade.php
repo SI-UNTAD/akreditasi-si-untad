@@ -7,7 +7,7 @@
         ['label' => 'Profil', 'href' => '#profile', 'active' => false],
         ['label' => 'Pencapaian', 'href' => '#achievement', 'active' => false],
         ['label' => 'Visi & Misi', 'href' => '#visi-misi', 'active' => false],
-        ['label' => 'Struktur Fakultas', 'href' => '#struktur', 'active' => false],
+        ['label' => 'Dosen', 'href' => '#struktur', 'active' => false],
     ];
 @endphp
 
@@ -29,11 +29,11 @@
 
         <div class="flex items-center gap-3">
             <a href="{{ route('documents.index') }}"
-                class="pill-button bg-green-600 text-on-primary px-4 py-2 text-body-sm hover:bg-green-800 transition-all duration-150 hover:scale-[0.98]">
+                class="pill-button bg-green-600 text-on-primary px-4 py-2 text-h3 hover:bg-green-800 transition-all duration-150 hover:scale-[0.98]">
                 Dokumen
             </a>
             <a href="/admin"
-                class="pill-button bg-canvas text-ink border border-hairline px-4 py-2 text-body-sm hover:bg-canvas-soft transition-colors">
+                class="pill-button bg-canvas text-ink border border-hairline px-4 py-2 text-h3 hover:bg-canvas-soft transition-colors">
                 Admin
             </a>
         </div>

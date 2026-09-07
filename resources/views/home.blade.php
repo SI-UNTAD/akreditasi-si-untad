@@ -17,8 +17,8 @@
 @section('content')
     <x-top-app-bar />
     <x-home.hero />
-    <x-home.vision-mission />
-    <x-home.graduate-profiles />
+    <x-home.vision-mission :id="'visi-misi'" />
     <x-home.achievements :achievements="$achievements" />
     <x-home.org-structure :structure="$orgStructure" />
+    <x-footer />
 @endsection
