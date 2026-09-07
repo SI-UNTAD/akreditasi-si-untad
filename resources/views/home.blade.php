@@ -15,6 +15,7 @@
 @endsection
 
 @section('content')
+    <x-top-app-bar />
     <x-home.hero />
     <x-home.vision-mission />
     <x-home.graduate-profiles />
