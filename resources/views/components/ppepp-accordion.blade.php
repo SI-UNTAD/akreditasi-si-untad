@@ -15,7 +15,7 @@
             <h3 class="text-[20px] font-semibold text-on-surface">{{ $label }}</h3>
             {{-- Badge jumlah dokumen --}}
             @if ($documents->isNotEmpty())
-                <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full
+                <span class="px-2 py-0.5 bg-accent-green/10 text-accent-green rounded-full
                              font-label-sm text-label-sm">
                     {{ $documents->count() }}
                 </span>

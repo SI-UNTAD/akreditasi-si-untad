@@ -1,19 +1,32 @@
 <div>
     {{-- Hero Header --}}
-    <div class="flex flex-col gap-4 mx-8">
-        <h1 class="font-h1 text-h1 text-primary dark:text-primary-fixed leading-tight">
-            Pusat Dokumen Akreditasi Program Studi
-        </h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-            Akses cepat dan terstruktur ke seluruh dokumen standar akreditasi
-            melalui hirarki PPEPP (Penetapan, Pelaksanaan, Evaluasi, Pengendalian, Peningkatan).
-        </p>
+    <div class="flex flex-col gap-4 p-8">
+        <nav aria-label="Breadcrumb" class="flex text-on-surface-variant dark:text-outline font-label-sm text-label-sm w-full">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a class="inline-flex items-center hover:text-primary dark:hover:text-primary-fixed transition-colors"
+                        href="{{ route('home') }}">Home</a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <span class="material-symbols-outlined mx-1 text-sm"
+                            data-icon="chevron_right">chevron_right</span>
+                        <span class="ml-1 md:ml-2 text-accent-teal dark:text-accent-teal-fixed">Dokumen Akreditasi</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+        <h1 class="font-bold text-4xl text-accent-green dark:text-accent-green-fixed leading-tight">Pusat Dokumen Akreditasi Program
+            Studi Sistem Informasi</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Akses cepat dan terstruktur ke seluruh
+            dokumen standar akreditasi melalui hirarki PPEPP (Penetapan, Pelaksanaan, Evaluasi, Pengendalian,
+            Peningkatan).</p>
     </div>
 
     {{-- Search --}}
-    <div class="mx-8 mt-6">
+    <div class="mx-8">
         <input type="text" wire:model.live.debounce.300ms="search" placeholder="Cari judul atau nomor dokumen..."
-            class="w-full px-4 py-3 bg-surface-container text-on-surface rounded-xl border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-primary" />
+            class="w-full px-4 py-3 bg-surface-container text-on-surface rounded-xl border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-accent-green" />
     </div>
 
     {{-- Filter Bar (selalu tampil) --}}
@@ -71,7 +84,7 @@
 
         {{-- Reset --}}
         @if ($this->isFiltering)
-            <button wire:click="resetFilters" class="px-3 py-2 text-primary text-sm underline">
+            <button wire:click="resetFilters" class="px-3 py-2 text-accent-green text-sm underline">
                 Reset
             </button>
         @endif
@@ -96,23 +109,23 @@
                 <table class="w-full text-left font-label-sm">
                     <thead>
                         <tr class="border-b border-outline-variant/50">
-                            <th class="py-3 px-3 text-primary font-bold w-10">No</th>
+                            <th class="py-3 px-3 text-accent-green font-bold w-10">No</th>
                             <th wire:click="toggleSort('document_number')"
-                                class="py-3 px-3 text-primary font-bold min-w-[100px] cursor-pointer hover:underline">
+                                class="py-3 px-3 text-accent-green font-bold min-w-[100px] cursor-pointer hover:underline">
                                 Nomor Dokumen @if ($sortBy === 'document_number') {{ $sortDir === 'asc' ? '↑' : '↓' }} @endif
                             </th>
                             <th wire:click="toggleSort('title')"
-                                class="py-3 px-3 text-primary font-bold cursor-pointer hover:underline">
+                                class="py-3 px-3 text-accent-green font-bold cursor-pointer hover:underline">
                                 Nama Dokumen @if ($sortBy === 'title') {{ $sortDir === 'asc' ? '↑' : '↓' }} @endif
                             </th>
-                            <th class="py-3 px-3 text-primary font-bold">Deskripsi</th>
-                            <th class="py-3 px-3 text-primary font-bold">Kriteria</th>
-                            <th class="py-3 px-3 text-primary font-bold">Kategori</th>
+                            <th class="py-3 px-3 text-accent-green font-bold">Deskripsi</th>
+                            <th class="py-3 px-3 text-accent-green font-bold">Kriteria</th>
+                            <th class="py-3 px-3 text-accent-green font-bold">Kategori</th>
                             <th wire:click="toggleSort('year')"
-                                class="py-3 px-3 text-primary font-bold w-20 text-center cursor-pointer hover:underline">
+                                class="py-3 px-3 text-accent-green font-bold w-20 text-center cursor-pointer hover:underline">
                                 Tahun @if ($sortBy === 'year') {{ $sortDir === 'asc' ? '↑' : '↓' }} @endif
                             </th>
-                            <th class="py-3 px-3 text-primary font-bold w-20 text-center">Aksi</th>
+                            <th class="py-3 px-3 text-accent-green font-bold w-20 text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody class="text-on-surface-variant">
@@ -139,14 +152,14 @@
                                 <td class="py-4 px-3">
                                     @php $cat = \App\Models\Document::PPEPP_CATEGORIES[$document->ppepp_category] ?? $document->ppepp_category; @endphp
                                     <span class="px-2 py-1 text-xs rounded-full
-                                                @match($document->ppepp_category) {
-                                                    'penetapan' => 'bg-blue-100 text-blue-800',
-                                                    'pelaksanaan' => 'bg-green-100 text-green-800',
-                                                    'evaluasi' => 'bg-yellow-100 text-yellow-800',
-                                                    'pengendalian' => 'bg-orange-100 text-orange-800',
-                                                    'peningkatan' => 'bg-purple-100 text-purple-800',
-                                                    default => 'bg-gray-100 text-gray-800',
-                                                }">
+                                                            @match($document->ppepp_category) {
+                                                                'penetapan' => 'bg-blue-100 text-blue-800',
+                                                                'pelaksanaan' => 'bg-green-100 text-green-800',
+                                                                'evaluasi' => 'bg-yellow-100 text-yellow-800',
+                                                                'pengendalian' => 'bg-orange-100 text-orange-800',
+                                                                'peningkatan' => 'bg-purple-100 text-purple-800',
+                                                                default => 'bg-gray-100 text-gray-800',
+                                                            }">
                                         {{ $cat }}
                                     </span>
                                 </td>

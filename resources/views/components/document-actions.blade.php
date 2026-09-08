@@ -11,7 +11,7 @@
     @else
         {{-- Tombol Preview --}}
         @if ($document->preview_url)
-            <a href="{{ route('documents.preview', $document) }}" target="_blank" title="Lihat Dokumen" class="p-1.5 text-primary hover:bg-primary/10 rounded-lg
+            <a href="{{ route('documents.preview', $document) }}" target="_blank" title="Lihat Dokumen" class="p-1.5 text-accent-green hover:bg-accent-green/10 rounded-lg
                               transition-all duration-150 hover:scale-110">
                 <span class="material-symbols-outlined text-[20px]">open_in_new</span>
             </a>

@@ -6,11 +6,11 @@
     <table class="w-full text-left font-label-sm">
         <thead>
             <tr class="border-b border-outline-variant/50">
-                <th class="py-3 px-3 text-primary font-bold w-10">No</th>
-                <th class="py-3 px-3 text-primary font-bold min-w-[100px]">Nomor Dokumen</th>
-                <th class="py-3 px-3 text-primary font-bold">Nama Dokumen</th>
-                <th class="py-3 px-3 text-primary font-bold min-w-[180px]">Deskripsi</th>
-                <th class="py-3 px-3 text-primary font-bold w-20 text-center">Aksi</th>
+                <th class="py-3 px-3 text-accent-green font-bold w-10">No</th>
+                <th class="py-3 px-3 text-accent-green font-bold min-w-[100px]">Nomor Dokumen</th>
+                <th class="py-3 px-3 text-accent-green font-bold">Nama Dokumen</th>
+                <th class="py-3 px-3 text-accent-green font-bold min-w-[180px]">Deskripsi</th>
+                <th class="py-3 px-3 text-accent-green font-bold w-20 text-center">Aksi</th>
             </tr>
         </thead>
         <tbody class="text-on-surface-variant">

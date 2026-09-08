@@ -7,7 +7,7 @@
                 role="tab"
                 @class([
                     'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
-                    'bg-primary text-on-primary' => $activeTab === $key,
+                    'bg-accent-green text-on-accent-green' => $activeTab === $key,
                     'bg-surface-container text-on-surface-variant hover:bg-surface-container-high' => $activeTab !== $key,
                 ])
             >

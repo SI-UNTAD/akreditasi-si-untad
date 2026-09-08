@@ -19,7 +19,7 @@
                     </span>
                 @else
                     <a href="{{ $item['url'] ?? '#' }}"
-                       class="hover:text-primary dark:hover:text-primary-fixed transition-colors">
+                       class="hover:text-accent-green dark:hover:text-accent-green-fixed transition-colors">
                         {{ $item['label'] }}
                     </a>
                 @endif
