@@ -9,8 +9,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            CriteriaSeeder::class,  // ← harus pertama
-            DocumentSeeder::class,  // ← harus setelah criteria
+            AdminSeeder::class,
+            CriteriaSeeder::class,
+            DocumentSeeder::class,
+            DocumentExcelSeeder::class,
         ]);
     }
 }

@@ -65,11 +65,6 @@ class DocumentSeeder extends Seeder
         foreach ($this->documents() as $criteriaNumber => $categories) {
             $criteria = Criteria::where('number', $criteriaNumber)->first();
 
-            if (!$criteria) {
-                $this->command->warn("  ⚠ Kriteria {$criteriaNumber} tidak ditemukan. Jalankan CriteriaSeeder terlebih dahulu.");
-                continue;
-            }
-
             $this->command->info("  → Kriteria {$criteriaNumber}: {$criteria->name}");
 
             foreach ($categories as $category => $docs) {
@@ -115,10 +110,5 @@ class DocumentSeeder extends Seeder
                 }
             }
         }
-
-        $this->command->info("✓ Selesai! {$inserted} dokumen dengan file ID, {$skipped} dokumen placeholder (belum ada file ID).");
-        $this->command->line('');
-        $this->command->line('Untuk mengisi file ID, edit method documents() di DocumentSeeder.php');
-        $this->command->line('lalu jalankan: php artisan db:seed --class=DocumentSeeder');
     }
 }

@@ -11,12 +11,12 @@ class CriteriaSeeder extends Seeder
     public function run(): void
     {
         $criteriaData = [
-            [1, 'Visi, Misi, Tujuan dan Sasaran',         'flag'],
-            [2, 'Tata Pamong, Tata Kelola dan Kerjasama', 'account_balance'],
-            [3, 'Mahasiswa',                               'group'],
-            [4, 'Sumber Daya Manusia',                    'person_search'],
-            [5, 'Keuangan, Sarana dan Prasarana',         'payments'],
-            [6, 'Pendidikan',                             'school'],
+            [1, 'Budaya Mutu', 'flag'],
+            [2, 'Relevansi Pendidikan', 'account_balance'],
+            [3, 'Relevansi Penelitian', 'group'],
+            [4, 'Relevansi Pengabdian kepada Masyarakat', 'person_search'],
+            [5, 'Akuntabilitas', 'payments'],
+            [6, 'Diferensiasi Misi', 'school'],
         ];
 
         foreach ($criteriaData as [$number, $name, $icon]) {

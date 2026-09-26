@@ -5,6 +5,10 @@
 .env.production
 .phpactor.json
 .phpunit.result.cache
+# Excel source file (not needed in production, using generated array)
+Daftar_Link_Google_Drive_LED_Sistem_Informasi_dengan_Kriteria_PPEPP (1).xlsx
+# Generate script
+generate_array.cjs
 /.codex
 /.cursor/
 /.idea

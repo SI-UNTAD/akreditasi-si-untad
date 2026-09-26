@@ -2,7 +2,7 @@
 
 @extends('layouts.app')
 
-@section('title', 'IS TADULAKO — Profile Sistem Informasi Universitas Tadulako')
+@section('title', 'SI UNTAD — Profile Sistem Informasi Universitas Tadulako')
 
 @section('head')
 <style>
