@@ -17,7 +17,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     @yield('head')
-</head>
+    
 <body class="bg-canvas text-ink overflow-x-hidden font-sans antialiased">
 
     @yield('content')

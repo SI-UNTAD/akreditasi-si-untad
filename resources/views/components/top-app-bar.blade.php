@@ -7,7 +7,7 @@
         ['label' => 'Profil', 'href' => '#profile', 'active' => false],
         ['label' => 'Pencapaian', 'href' => '#achievement', 'active' => false],
         ['label' => 'Visi & Misi', 'href' => '#visi-misi', 'active' => false],
-        ['label' => 'Dosen', 'href' => '#struktur', 'active' => false],
+        // ['label' => 'Dosen', 'href' => '#struktur', 'active' => false],
     ];
 @endphp
 
